@@ -11,6 +11,7 @@ class DownloadPage(BasePage):
     locators = DownloadPageLocators()
 
     def download_web_installer_for_windows(self, filename):
+
         plugin_tab = self.element_is_clickable(self.locators.TAB_PLUGIN_BUTTON)
         plugin_tab.click()
         wait = WebDriverWait(self.driver, 10)
@@ -21,3 +22,4 @@ class DownloadPage(BasePage):
         web_installer_link.click()
         file_size = round(float(match.group(1)), 1)
         return file_size
+
